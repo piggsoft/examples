@@ -12,7 +12,9 @@ import com.piggsoft.validation.CheckEmailAndAddress;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.ScriptAssert;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 /**
  * @author yaochen4
@@ -20,15 +22,16 @@ import javax.validation.constraints.NotNull;
  * @create 2016/11/18
  * @since 1.0
  */
-//@CheckEmailAndAddress
+@CheckEmailAndAddress
 @ScriptAssert(script = "!(_this.email==null || _this.age==null)", lang = "javascript", alias = "_this", message = "{AddressAndAgeNotNull}")
 public class User {
 
-    @NotNull(message = "{0}不能为空")
+    @NotNull(message = "aaaaa")
     private Long id;
-    //@NotEmpty
+    @NotEmpty
+    @Pattern(regexp = "\\d")
     private String username;
-    //@CannotContainSpaces
+    @CannotContainSpaces
     private String password;
     private String email;
     private String address;

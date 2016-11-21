@@ -13,6 +13,7 @@
         <module>guava-api-example</module>
         <module>effective-java-example</module>
         <module>design-patterns-example</module>
+        <module>web-collector-example</module>
     </modules>
     <packaging>pom</packaging>
 

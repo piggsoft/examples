@@ -33,7 +33,7 @@ public class SpringValidationExampleApplicationTests {
 
 	@Test
 	public void test01() throws Exception {
-		mockMvc.perform(get("/home/get")).andExpect(status().isOk())
+		mockMvc.perform(get("/home/get?id=100")).andExpect(status().isOk())
 				.andExpect(jsonPath("$.code", is(1102)))
 				.andDo(print());
 	}
@@ -41,7 +41,7 @@ public class SpringValidationExampleApplicationTests {
 	@Test
 	public void test02() throws Exception {
 		mockMvc.perform(get("/home/get?id=1")).andExpect(status().isOk())
-				.andExpect(jsonPath("$.code", is(1102)))
+				.andExpect(jsonPath("$.code", is(1103)))
 				.andDo(print());
 	}
 
